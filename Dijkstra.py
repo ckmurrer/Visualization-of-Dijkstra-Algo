@@ -14,14 +14,12 @@ def grid():
     gridArr = []
     for row in range(31):
         for col in range(31):
-            pygame.draw.rect(screen,(255,255,255),[(margin+width)*col+margin,(margin+height)*row+margin,width,height])
+            gridArr.append(pygame.draw.rect(screen,(255,255,255),[(margin+width)*col+margin,(margin+height)*row+margin,width,height]))
 
 # main function that builds game screen
 # and handles click events
 def main():
-    clock = pygame.time.Clock()
     pygame.display.set_caption("Dijkstra's Pathfinding")
-    clock.tick(60)
     grid()
     pygame.display.flip()
 
@@ -31,6 +29,8 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
                 pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print("click")
 
 if __name__ == "__main__":
     main()
