@@ -60,7 +60,8 @@ def main():
                     count+=1
 
                 if event.button == 3:
-                    walls()
+                    if event.type == pygame.MOUSEMOTION:
+                        walls()
 
 
 if __name__ == "__main__":
